@@ -31,14 +31,6 @@ def scrap_station(weather_station_url):
     global START_DATE
     global END_DATE
     global UNIT_SYSTEM
-    global FIND_FIRST_DATE
-
-    if FIND_FIRST_DATE:
-        # find first date
-        first_date_with_data = Utils.find_first_data_entry(weather_station_url=weather_station_url, start_date=START_DATE)
-        # if first date found
-        if(first_date_with_data != -1):
-            START_DATE = first_date_with_data
     
     url_gen = Utils.date_url_generator(weather_station_url, START_DATE, END_DATE)
     station_name = weather_station_url.split('/')[-1]
