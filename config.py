@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import datetime
 
 # Set Date format like: YYYY, MM, DD
 # Note that FIND_FIRST_DATE uses START_DATE as default start date
