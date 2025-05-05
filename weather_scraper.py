@@ -20,8 +20,6 @@ END_DATE = config.END_DATE
 
 # set to "metric" or "imperial"
 UNIT_SYSTEM = config.UNIT_SYSTEM
-# find the first data entry automatically
-FIND_FIRST_DATE = config.FIND_FIRST_DATE
 
 
 def scrap_station(weather_station_url):
