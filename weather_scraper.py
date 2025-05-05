@@ -5,21 +5,20 @@ import requests
 import csv
 import lxml.html as lh
 
-import config
-
 from util.UnitConverter import ConvertToSystem
 from util.Parser import Parser
 from util.Utils import Utils
+from datetime import datetime
 
 # configuration
 stations_file = open('stations.txt', 'r')
 URLS = stations_file.readlines()
 # Date format: YYYY-MM-DD
-START_DATE = config.START_DATE
-END_DATE = config.END_DATE
+START_DATE = datetime.today()
+END_DATE = datetime.today()
 
 # set to "metric" or "imperial"
-UNIT_SYSTEM = config.UNIT_SYSTEM
+UNIT_SYSTEM = "imperial"
 
 
 def scrap_station(weather_station_url):
