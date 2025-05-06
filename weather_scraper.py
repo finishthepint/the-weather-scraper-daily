@@ -11,8 +11,7 @@ from util.Utils import Utils
 from datetime import datetime
 
 # configuration
-stations_file = open('stations.txt', 'r')
-URLS = stations_file.readlines()
+URLS = ["https://www.wunderground.com/dashboard/pws/KWABELLI509"]
 # Date format: YYYY-MM-DD
 START_DATE = datetime.today()
 END_DATE = datetime.today()
@@ -33,7 +32,7 @@ def scrap_station(weather_station_url):
     station_name = weather_station_url.split('/')[-1]
     file_name = f'{station_name}.csv'
 
-    with open(file_name, 'a+', newline='') as csvfile:
+    with open(file_name, 'w', newline='') as csvfile:
         fieldnames = ['Date', 'Time',	'Temperature',	'Dew_Point',	'Humidity',	'Wind',	'Speed',	'Gust',	'Pressure',	'Precip_Rate',	'Precip_Accum',	'UV',   'Solar']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
